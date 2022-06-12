@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Menus</h1>
-
-<div id="menus">
-  <% @menus.each do |menu| %>
-    <%= render menu %>
-    <p>
-      <%= link_to "Show this menu", menu %>
-    </p>
-  <% end %>
+<div class="py-5 text-center container">
+  <h1>Menus</h1>
+  <%= link_to "New product", new_menu_path, class:"btn btn-secondary" %>
 </div>
 
-<%= link_to "New menu", new_menu_path %>
+<div id="menus">
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% @menus.each do |menu| %>
+          <%= render menu %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

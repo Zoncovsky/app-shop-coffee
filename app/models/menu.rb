@@ -3,4 +3,5 @@ class Menu < ApplicationRecord
 	has_one_attached :image
 
   validates :title, :price, :image, presence: true
+
 end

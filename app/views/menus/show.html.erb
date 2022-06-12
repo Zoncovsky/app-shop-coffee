@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @menu %>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <%= render @menu %>
+      </div>
+    </div>
+  </div>
 
-<div>
-  <%= link_to "Edit this menu", edit_menu_path(@menu) %> |
-  <%= link_to "Back to menus", menus_path %>
-
-  <%= button_to "Destroy this menu", @menu, method: :delete %>
+<div class="py-5 text-center container">
+  <%= link_to "Edit this menu", edit_menu_path(@menu), class:"btn btn-secondary btn-sm" %> |
+  <%= link_to "Back to menus", menus_path, class:"btn btn-dark btn-sm" %>
+  <br><br>
+  <%= button_to "Destroy this menu", @menu, method: :delete, class:"btn btn-danger btn-sm" %>
 </div>
