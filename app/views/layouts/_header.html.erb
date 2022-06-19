@@ -2,24 +2,24 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <%= link_to 'Cava', root_path, class:"navbar-brand bi bi-cup-fill", style:"color: white"%>
-
+          <% if user_signed_in? %>
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                <li><%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %></li>
+                <%= link_to "Cart", menus_path, class:"dropdown-item" %>
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, class:"dropdown-item" %></li>
+              </ul>
+            </div>
+          <% else %>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <%= link_to "Log in", new_user_session_path, type:"button", class:"nav-link px-2 link-light" %>
           <%= link_to "Sign up", new_user_registration_path, type:"button", class:"nav-link px-2 link-light" %>
         </ul>
-        <% if user_signed_in? %>
-          <div class="dropdown text-end">
-            <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-              <li><%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %></li>
-              <%= link_to "Cart", menus_path, class:"dropdown-item" %>
-              <li><hr class="dropdown-divider"></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, class:"dropdown-item" %></li>
-            </ul>
-          </div>
-        <% end %>
+      <% end %>
       </div>
     </div>
   </header>
