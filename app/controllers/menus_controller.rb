@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: %i[ show edit update destroy ]
 
+
   # GET /menus or /menus.json
   def index
     @menus = Menu.all
